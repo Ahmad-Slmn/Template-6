@@ -65,7 +65,7 @@ window.onscroll = function () {
      // Show The Arrow-up If Window scrollY Is >= 700 
     if (this.pageYOffset >= 700) {
 
-        myarrow.style.display = "block"
+        myarrow.style.display = "block";
 
     } else {
         myarrow.style.display = "none"
@@ -75,9 +75,7 @@ window.onscroll = function () {
 
 myarrow.onclick = function () {
 
-    window.scrollTo({
-        top: 0
-    })
+    window.scrollTo(0, 0)
 }
 
 function startCount(el) {

@@ -17,7 +17,7 @@
 .fa-arrow-up {
     position: fixed;
     bottom: 80px;
-    right: 5px;
+    right: 115px;
     padding: 15px;
     background-color: var(--main-color-alt);
     cursor: pointer;
@@ -224,8 +224,7 @@ ul {
     transition: var(--main-transition);
     overflow: hidden;
     font-size: 20px;
-    font-weight: bold;
-    font-style: italic;
+    font-weight: bold
     
 }
 
@@ -1567,7 +1566,6 @@ pricing .container .box::after{
 
 .stats .text{
     color: var(--main-color);
-    font-style: italic;
     font-size: 20px;
     font-weight: bold
 }
