@@ -223,6 +223,10 @@ ul {
     .landing .image {
         display: block !important
     }
+    
+    .landing .image img{
+        max-width: 420px !important
+    }
 
     .landing .text {
         margin: 20px 0
