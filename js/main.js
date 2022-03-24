@@ -1,12 +1,28 @@
 let myarrow = document.querySelector(".fa-arrow-up");
 let mega_menu = document.querySelector(".mega-menu");
-let myli = document.querySelector(".other")
+let myli = document.querySelector(".other");
+let all_links = document.querySelectorAll(".header .main-nav li a")
 
-myli.onclick = function(){
-    
+all_links.forEach((el) => {
+
+    el.onclick = function (event) {
+
+        event.preventDefault();
+
+        document.querySelector(event.target.dataset.section).scrollIntoView({
+
+            behavior: "smooth"
+
+        })
+    }
+
+})
+
+
+myli.onclick = function () {
+
     mega_menu.classList.toggle("active")
 }
-
 
 let countDownDate = new Date("Dec 28, 2022 23:59:59").getTime();
 
@@ -35,6 +51,7 @@ let counter = setInterval(() => {
 }, 1000);
 
 let progressSpans = document.querySelectorAll(".the-progress span");
+let text = document.querySelectorAll(".our-skills .skills .skill h3 span");
 let section = document.querySelector(".our-skills");
 let nums = document.querySelectorAll(".stats .number");
 let statsSection = document.querySelector(".stats");
@@ -46,12 +63,22 @@ window.onscroll = function () {
         progressSpans.forEach((span) => {
             span.style.width = span.dataset.width;
         });
-        
-     
-    }else{
+
+        text.forEach((el) => {
+
+            el.style.opacity = "1"
+        })
+
+
+    } else {
         progressSpans.forEach((span) => {
             span.style.width = "0%"
         });
+
+        text.forEach((el) => {
+
+            el.style.opacity = "0"
+        })
 
     }
     // Stats Increase Number
@@ -61,8 +88,8 @@ window.onscroll = function () {
         }
         started = true;
     }
-    
-     // Show The Arrow-up If Window scrollY Is >= 700 
+
+    // Show The Arrow-up If Window scrollY Is >= 700 
     if (this.pageYOffset >= 700) {
 
         myarrow.style.display = "block";
@@ -85,5 +112,5 @@ function startCount(el) {
         if (el.textContent == goal) {
             clearInterval(count);
         }
-    }, 2000 / goal);
+    }, 2000 / goal)
 }
